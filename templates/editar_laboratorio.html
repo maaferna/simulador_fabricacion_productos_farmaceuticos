@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<br><br>
+<div class="container">
+    <h2>Editar Laboratorio</h2>
+</div>
+<div class="container border p-3 mb-3 bg-light text-dark">
+   
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group row mt-8">
+            <div class="col-md-6 mb-0">
+              {{ form.nombre|as_crispy_field }}
+            </div>
+            <div class="col-md-6 mb-0">
+              {{ form.ciudad|as_crispy_field }}
+            </div>
+        </div>
+        <div class="form-row">
+            {{ form.pais|as_crispy_field }}
+        </div>
+        <div class="d-grid col-6">
+            <button type="submit" id="btn-enviar" class="btn btn-warning btn-lg">Enviar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

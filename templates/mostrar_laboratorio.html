@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load fontawesome_5 %}
+
+{% block content %}
+<div class="container">
+    <h2>Información de Laboratorios</h2>
+    <table class="table table-bordered table-striped table-hover">
+        <thread class="border-bottom font-weight-bold">
+            <tr>
+                <td class="col-md-3" style="text-align: center">Nombre</td>
+                <td class="col-md-3" style="text-align: center">Ciudad</td>
+                <td class="col-md-2" style="text-align: center">Pais</td>
+                <td class="col-md-2" style="text-align: center">Editar</td>
+                <td class="col-md-2" style="text-align: center">Eliminar</td>         
+            </tr>
+        </thread>
+        <tbody>
+            {% for item in laboratorios %}
+                <tr>
+                    <td class="col-md-4" style="text-align: center">{{item.nombre}}</td>
+                    <td class="col-md-4" style="text-align: center">{{item.ciudad}}</td>
+                    <td class="col-md-4" style="text-align: center">{{item.pais.name}}</td>
+                    <td>
+                        <a href="/laboratorio/{{item.id}}/editar" >
+                            <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/laboratorio/{{item.id}}/eliminar" >
+                            <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<section class="container">
+    <p>Numero de sesiones: {{ nvisitas }}</p>
+</section>
+{% endblock %}
