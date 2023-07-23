@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load fontawesome_5 %}
+
+{% block content %}
+<div class="container">
+    <h2>SIMULADOR PARA FABRICACIÓN DE PRODUCTOS FARMACÉUTICOS</h2>
+    <h6>Final Drilling Bootcamp E-Camp</h6>
+</div>
+<div class="container">
+    <section class="container">
+        <h6>Descripción</h6>
+        <p>Las empresas de laboratorio farmacéuticos pueden realizar varios productos, y a su vez, ésta
+            posee un director general que no puede pertenecer a otra empresa o laboratorio farmacéutico.</p>i>
+        </ul>
+    </section>
+    <div class="container">
+        <h6>Verificación del Modelo Relacional, realizando Query a la base de datos desde el terminal</h6>
+        <br>
+        <div class="row w-100 m-0 justify-content-center">
+            <div class="col-6 mb-6">
+                <div class="card" style="width: 32rem;">
+                    <img src="{% static 'img/director_general_query.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Query SQL desde terminal dbshell.</h5>
+                        <p class="card-text">Obtiene todos los directores generales almanecenados en DB.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card mb-6" style="width: 32rem;">
+                    <img src="{% static 'img/get_join_producto_laboratorio.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Query SQL para retrieve data utilizando JOIN</h5>
+                        <p class="card-text">Obtiene todos los directores generales almanecenados en DB.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-6">
+                    <div class="card mb-6" style="width: 32rem;">
+                        <img src="{% static 'img/get_migrations.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Migraciones from shell Python</h5>
+                            <p class="card-text">Retrieve Migraciones desde el terminal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mb-6" style="width: 32rem;">
+                        <img src="{% static 'img/get_producto_1_from_shell_python.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Python shell para retrieve data with get</h5>
+                            <p class="card-text">Get producto utilizando shell python</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-6">
+                    <div class="card mb-6" style="width: 32rem;">
+                        <img src="{% static 'img/get_producto1.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Query SQL para retrieve data utilizando WHERE</h5>
+                            <p class="card-text">Get producto utilizando shell python</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mb-6" style="width: 32rem;">
+                        <img src="{% static 'img/laboratorio_from_shell.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Retrive laboratorios from Python shell</h5>
+                            <p class="card-text">Retrieve todos los laboratios desde Python shell</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-6">
+                    <div class="card mb-6" style="width: 32rem;">
+                        <img src="{% static 'img/producto_laboratorio_from_shell.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Retrive productos from Python shell</h5>
+                            <p class="card-text">Get producto utilizando objects.all() en shell python</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mb-6" style="width: 32rem;">
+                        <img src="{% static 'img/objects_all.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Retrive laboratorios from Python shell</h5>
+                            <p class="card-text">Retrieve todos los laboratios desde Python shell</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

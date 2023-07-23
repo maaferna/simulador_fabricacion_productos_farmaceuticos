@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<br><br>
+<div class="container">
+    <h2>Eliminar Director Ejecutivo</h2>
+</div>
+<div class="container border p-3 mb-3 bg-light text-dark">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Desea eliminar el siguiente Director Ejecutivo</legend>
+            <ul>
+                <li>
+                    {{ item.nombre }}
+                </li>
+            </ul>
+        </fieldset>
+        <button type="submit">Si, estoy seguro.</button>
+    </form>
+</div>
+{% endblock %}

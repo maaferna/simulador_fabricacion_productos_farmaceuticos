@@ -3,8 +3,8 @@
 {% load fontawesome_5 %}
 
 {% block content %}
-<div class="container bg-dark text-light">
-    <h2>Información de Directores</h2>
+<div class="container">
+    <h2>Catalogo de Productos</h2>
 </div>
 <div class="container">
     <table class="table table-bordered table-striped table-hover">
@@ -12,24 +12,28 @@
             <tr>
                 <td class="col-md-3" style="text-align: center">Nombre</td>
                 <td class="col-md-3" style="text-align: center">Laboratorio</td>
-                <td class="col-md-2" style="text-align: center">Especialidad</td>
-                <td class="col-md-2" style="text-align: center">Editar</td>
-                <td class="col-md-2" style="text-align: center">Eliminar</td>         
+                <td class="col-md-1" style="text-align: center">Precio venta</td>
+                <td class="col-md-1" style="text-align: center">Costo</td>
+                <td class="col-md-2" style="text-align: center">Fecha de Fabricación</td>
+                <td class="col-md-1" style="text-align: center">Editar</td>    
+                <td class="col-md-1" style="text-align: center">Eliminar</td>         
             </tr>
         </thread>
         <tbody>
-            {% for item in directores %}
+            {% for item in productos %}
                 <tr>
-                    <td class="col-md-4" style="text-align: center">{{item.nombre}}</td>
-                    <td class="col-md-4" style="text-align: center">{{item.laboratorio.nombre}}</td>
-                    <td class="col-md-4" style="text-align: center">{{item.especialidad}}</td>
+                    <td class="col-md-3" style="text-align: center">{{item.nombre}}</td>
+                    <td class="col-md-3" style="text-align: center">{{item.laboratorio.nombre}}</td>
+                    <td class="col-md-1" style="text-align: center">{{item.p_venta}}</td>
+                    <td class="col-md-1" style="text-align: center">{{item.p_costo}}</td>
+                    <td class="col-md-2" style="text-align: center">{{item.f_fabricacion}}</td>
                     <td>
-                        <a href="/director/{{item.id}}/editar" >
+                        <a href="/producto/{{item.id}}/editar" >
                             <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
                         </a>
                     </td>
                     <td>
-                        <a href="/director/{{item.id}}/eliminar" >
+                        <a href="/producto/{{item.id}}/eliminar" >
                             <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
                         </a>
                     </td>
@@ -38,4 +42,5 @@
         </tbody>
     </table>
 </div>
+
 {% endblock %}

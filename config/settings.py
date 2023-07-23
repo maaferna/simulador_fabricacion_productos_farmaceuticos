@@ -88,9 +88,17 @@ DATABASES = {
         'PASSWORD': 'userdjango',
         'HOST': 'postgresql-mparraf.alwaysdata.net', 
         'PORT': '5432',
-
-    }
+        'TEST': {'NAME': 'test_db'},
+    },
+    'test': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        },
 }
+
+import sys
+if 'test' in sys.argv:
+    DATABASES['default'] = DATABASES['test']
 
 
 # Password validation
