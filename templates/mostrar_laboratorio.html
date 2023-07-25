@@ -38,6 +38,19 @@
         </tbody>
     </table>
 </div>
+<section class="container">
+    <a href="/laboratorio/add" >Agregar Laboratorio
+        <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-plus"></i></button>
+    </a>
+</section>
+
+<section class="p-2">
+    {% if nvisitas == 1 %}
+        <p>Esta es su primera visita a la página.</p>
+    {% else %}
+        <p>Usted ha visitado esta página <strong>{{nvisitas}}</strong> veces.</p>
+    {% endif %}
+</section>
 
 {% endblock %}
 

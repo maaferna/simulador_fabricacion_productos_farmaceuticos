@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import *
-from django.contrib.sessions.models import Session
+#from django.contrib.sessions.models import Session
 
 # Create your views here.
 def add_laboratorio(request, *args, **kwargs):
@@ -19,8 +19,11 @@ def index(request):
 def mostrar_laboratorio(request):
     context = {
         'laboratorios': Laboratorio.objects.all().order_by("nombre"),
-        'nvisitas': Session.objects.all().count()
+        #'nvisitas': Session.objects.all().count()
         }
+    nvisits = request.session.get('num_visits', 0) #Inicializa la variable
+    request.session['num_visits'] = nvisits + 1 #Guarda la variable de session
+    context['nvisitas'] = nvisits + 1 # Pasa la variable para render en el HTML
     return render(request, "mostrar_laboratorio.html", context)
 
 def mostrar_directores(request):
