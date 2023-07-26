@@ -8,7 +8,7 @@ class LaboratorioForm(forms.ModelForm):
     class Meta:
         model = Laboratorio
         fields = '__all__'
-    
+
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Nombre del Laboratorio',}),
             'ciudad': forms.TextInput(attrs={"class": "form-control", "placeholder": "Ingrese ciudad",}),
@@ -20,7 +20,7 @@ class DirectorGeneralForm(forms.ModelForm):
     class Meta:
         model = DirectorGeneral
         fields = '__all__'
-    
+
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Nombre Director',}),
             'especialidad': forms.TextInput(attrs={'class': 'form-control','placeholder':'Ingrese especialidad'}),
@@ -34,14 +34,14 @@ class ProductoForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Nombre Director',}),
+            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Nombre del producto',}),
             'f_fabricacion': forms.DateInput(
                 format=('%d/%m/%Y'),
-                attrs={'class': 'form-control', 
+                attrs={'class': 'form-control',
                        'placeholder': 'Select a date',
                        'type': 'date'  # <--- IF I REMOVE THIS LINE, THE INITIAL VALUE IS DISPLAYED
                       }),
-            'laboratorio': forms.Select(attrs={"class": "form-control", "placeholder": "Ingrese laboratorio",}),
+            'laboratorio': forms.Select(attrs={"class": "form-control", "placeholder": "Ingrese nombre producto",}),
             'p_costo': forms.NumberInput(attrs={"class": "form-control", "placeholder": "Ingrese costo de venta",}),
             'p_venta': forms.NumberInput(attrs={"class": "form-control", "placeholder": "Ingrese precio de venta",}),
         }
