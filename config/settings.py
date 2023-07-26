@@ -11,16 +11,17 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os 
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from dotenv import load_dotenv
+load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4t#75==3h24lwvu!p$&^@s-^z#a9xtw)kocop9xzpo134rlj8w'
+SECRET_KEY = os.getenv('secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,10 +84,10 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mparraf_db_final_orm',
+        'NAME':  os.getenv('db_name'),
         'USER': 'mparraf_userdjango',
         'PASSWORD': 'userdjango',
-        'HOST': 'postgresql-mparraf.alwaysdata.net', 
+        'HOST': os.getenv('host_name'), 
         'PORT': '5432',
         'TEST': {'NAME': 'test_db'},
     },
